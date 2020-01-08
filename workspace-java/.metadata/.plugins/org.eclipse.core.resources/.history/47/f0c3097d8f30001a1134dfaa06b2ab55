@@ -1,0 +1,18 @@
+/**
+ * Classe Hello
+ * 
+ * @author Generation
+ *
+ */
+public class Hello {
+
+	public static void main(String args[]) {
+		System.out.println("oi, tudo bem?");
+		System.out.println("oi, tudo bem e com você?");
+		System.out.println("bem, alguma novidade?");
+		System.out.println("nenhuma");
+		System.out.println("de boa então, nós se vemos por ai");
+		System.out.println("valeu então");
+	}
+
+}

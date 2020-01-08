@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Uri1045Resolucao {
+	
+	public static void main(String args[]) {
+		Scanner teclado;
+		teclado = new Scanner(System.in);
+		
+		double a,b,c;
+		
+		a = teclado.nextDouble();
+		b = teclado.nextDouble();
+		c = teclado.nextDouble();
+		
+		
+		
+		teclado.close();
+		
+		if(b>a && b>c) {
+			double ordenar = a;
+			a = b;
+			b = ordenar;
+		}
+		
+		if(c>a && c>b) {
+			double ordenar = a;
+			a = c;
+			c = ordenar;
+		}
+		
+		System.out.print(a+""+b+""+c);
+		
+		
+	}
+
+}

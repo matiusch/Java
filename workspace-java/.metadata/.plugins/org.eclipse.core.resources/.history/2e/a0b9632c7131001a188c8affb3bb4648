@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Uri1160Resolucao {
+	
+	public static void main(String args[]) {
+		
+		Scanner teclado;
+		teclado = new Scanner(System.in);
+		
+		int quantidadeCidades = teclado.nextInt();
+		int anos = 0;
+		
+		while(quantidadeCidades > 0) {
+			int PopulacaoA = teclado.nextInt();
+			int PopulacaoB = teclado.nextInt();
+			double GA      = teclado.nextDouble();
+			double GB      = teclado.nextDouble();
+			
+			while(PopulacaoA<=PopulacaoB) {
+				 anos +=1 ;
+				 PopulacaoA =(int)(PopulacaoA + (PopulacaoA*GA));
+				 PopulacaoA =(int)(PopulacaoB + (PopulacaoB*GB));
+			}
+		}
+		
+		if(anos>100) {
+			System.out.println("Mais de 1 seculo.\n");
+		}else {
+			System.out.printf("%d anos.\n", anos);
+		}
+		
+	}
+
+}

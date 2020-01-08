@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Uri1160Resolucao {
+	
+	public static void main(String args[]) {
+		
+		Scanner teclado;
+		teclado = new Scanner(System.in);
+		
+		int quantidadeCidades = teclado.nextInt();
+		int anos = 0;
+		
+		for(int i=1;i<=quantidadeCidades;i++){
+			
+			int dados[] = new int [4];
+			
+			for(int j=1; j<=4;j++) {
+				
+				dados[j] = teclado.nextInt();
+			while(dados[0]<=dados[1]) {
+				 anos +=1 ;
+				 dados[0] =(int)(dados[0] + (dados[0]*dados[2]));
+				 dados[1] =(int)(dados[1] + (dados[1]*dados[3]));
+				}
+			}
+			
+		}
+		
+		if(anos>100) {
+			System.out.println("Mais de 1 seculo.\n");
+		}else {
+			System.out.printf("%d anos.\n", anos);
+		}
+		
+	}
+
+}

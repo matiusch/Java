@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Uri1012Resolucao {
+	
+	public static void main(String args[]) {
+		
+		Scanner teclado;
+		teclado = new Scanner(System.in);
+		
+		double a,b,c,triangulo, quadrado,trapezio,circulo,retangulo;
+		
+		
+		a=teclado.nextDouble();
+		b=teclado.nextDouble();
+		c=teclado.nextDouble();
+		
+		
+		triangulo = (a*c)/2;
+		circulo   = 3.14159*(c*c);
+		trapezio  = ((a+b)*c)/2;
+		quadrado  = b*b;
+		retangulo = a*b;
+		
+		String res = String.format("triangulo  %.3f \n  circulo  %.3f \n trapezio  %.3f \n quadrado  %.3f \n retangulo  %.3f \n", triangulo, circulo, trapezio, quadrado,retangulo);
+		System.out.println("TRIANGULO: "+res);
+		System.out.println("CIRCULO: "+circulo);
+		System.out.println("TRAPEZIO: "+trapezio);
+		System.out.println("QUADRADO: "+quadrado);
+		System.out.println("RETANGULO: "+retangulo);
+		
+		
+		teclado.close();
+		
+	}
+
+}

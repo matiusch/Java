@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Uri1060Resolucao {
+	
+	public static void main(String args[]) {
+		Scanner teclado;
+		teclado = new Scanner(System.in);
+		
+		
+		for(int i=0;i<6;i++) {
+			
+			double numero;
+			
+			numero = teclado.nextDouble();
+			
+		}
+		
+		
+		
+		
+		teclado.close();
+		
+	}
+
+}

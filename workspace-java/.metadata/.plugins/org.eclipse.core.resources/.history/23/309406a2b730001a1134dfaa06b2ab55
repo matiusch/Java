@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Uri1017Resolucao {
+
+	public static void main(String args[]) {
+
+		Scanner teclado;
+		teclado = new Scanner(System.in);
+
+		double tempo, velocidade, litros;
+
+		tempo = teclado.nextDouble();
+		velocidade = teclado.nextDouble();
+
+		litros = (tempo * velocidade) / 12;
+
+
+		System.out.printf("%.3f\n",litros);
+
+		teclado.close();
+		
+		
+	}
+
+}

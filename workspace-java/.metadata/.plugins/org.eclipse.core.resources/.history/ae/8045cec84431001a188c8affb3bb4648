@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Uri1045Resolucao {
+	
+	public static void main(String args[]) {
+		Scanner teclado;
+		teclado = new Scanner(System.in);
+		
+		double a,b,c;
+		
+		a = teclado.nextDouble();
+		b = teclado.nextDouble();
+		c = teclado.nextDouble();
+		
+		
+		
+		teclado.close();
+		
+		if(b>a && b>c) {
+			double ordenar = a;
+			a = b;
+			b = ordenar;
+		}
+		
+		if(c>a && c>b) {
+			double ordenar = a;
+			a = c;
+			c = ordenar;
+		}
+		
+		
+		double resultado = b+c;
+		
+		if(a>=resultado) {
+			System.out.print("NAO FORMA TRIANGULO");
+		}else {
+			if((a*a)==(b*b)+(c*c)) {
+				System.out.print("TRIANGULO RETANGULO");
+			}
+			
+		}
+		
+		
+	}
+
+}
