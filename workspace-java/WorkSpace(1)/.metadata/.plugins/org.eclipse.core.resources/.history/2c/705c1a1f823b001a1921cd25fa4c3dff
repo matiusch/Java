@@ -1,0 +1,28 @@
+package br.org.generation.webMotors.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.org.generation.webMotors.model.Veiculo;
+
+
+@RestController
+public class VeiculoController {
+	
+	
+	@GetMapping("/veiculo/teste")
+	public Veiculo testeVeiculo() {
+		Veiculo veiculo = new Veiculo();
+		
+		veiculo.setId(1);
+		veiculo.setMarca("Ford");
+		veiculo.setModelo("não sei");
+		veiculo.setAno(1998);
+		veiculo.setCor("preto grafite");
+		veiculo.setPreco(5999);
+		veiculo.setTipo("semi-usuado"+"quatro rodas de 23 p"+ "duas portas");
+		
+		return veiculo;
+	}
+
+}

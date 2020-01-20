@@ -1,0 +1,68 @@
+package br.org.generation.webMotors.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
+
+
+import br.org.generation.webMotors.bd.BDVeiculo;
+import br.org.generation.webMotors.model.Veiculo;
+
+
+@RestController
+public class VeiculoController {
+	
+	
+	
+	
+	private BDVeiculo bd = new BDVeiculo();
+	
+	@GetMapping("/veiculo/todos")
+	public ResponseEntity<ArrayList<Veiculo>> getTodos(){
+		
+		return ResponseEntity.ok(bd.buscarTodos());
+	}
+	
+	@GetMapping("veiculos/{id}")
+	public ResponseEntity<Veiculo> getVeiculo(@PathVariable int id){
+		
+		Veiculo v = bd.buscar(id);
+		
+		if(v != null ) {
+			return ResponseEntity.ok(v);
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+		
+	}
+	
+	@PostMapping("veiculo/cadastrar")
+	public ResponseEntity<Veiculo> cadastrarVeiculo(@RequestBody Veiculo veiculo){
+		bd.gravar(veiculo);
+		return ResponseEntity.ok(veiculo);
+	}
+	
+	@PutMapping("veiculo/atualizar-cadastro")
+	public ResponseEntity<String> alterarCad(@RequestBody Veiculo veiculo){
+		bd.atualizar(veiculo);
+		return ResponseEntity.ok("Success");
+	}
+	
+	@DeleteMapping("veiculo/deletar-cadastro/{id}")
+	public ResponseEntity<String> deletarCad(@PathVariable int id){
+		if(bd.apagar(id)) {
+			return ResponseEntity.ok("DELETED");
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+		
+	}
+
+}
